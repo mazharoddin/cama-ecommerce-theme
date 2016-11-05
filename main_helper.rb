@@ -16,18 +16,17 @@ module Themes::EShop::MainHelper
 
       theme.save_field_value('home_slider_tabs', ['One Click Installation', 'Easy Configuration', 'Easy Administration', 'Shop Online'])
 
-       group = theme.add_field_group({name: "Shipping Grid", slug: "shipping-grid", description: ""})
+       group = theme.add_field_group({name: "Shipping Grid", slug: "shipping_grid", description: ""})
        group.add_field({"name"=>"Free Shipping on orders over", "slug"=>"free_shipping"}, {field_key: "numeric", default_value: '500', translate: true})
        group.add_field({"name"=>"Order Online Phone Number", "slug"=>"order_online_tel"}, {field_key: "phone", default_value: '99945678902' ,translate: true})
-       group.add_field({"name"=>"FB Page Link", "slug"=>"shipping_fb"}, {field_key: "text_box", default_value: "http://facebook.com/camaleon.cms" })
-       group.add_field({"name"=>"Twitter Link", "slug"=>"shipping_twitter"}, {field_key: "text_box", default_value: "https://twitter.com/Camaleon_CMs" })
+       group.add_field({"name"=>"FB Page Link", "slug"=>"shipping_fb"}, {field_key: "text_box", default_value: "http://facebook.com/shoplid" })
+       group.add_field({"name"=>"Twitter Link", "slug"=>"shipping_twitter"}, {field_key: "text_box", default_value: "https://twitter.com/shoplid" })
        group.add_field({"name"=>"Google Plus", "slug"=>"shipping_gplus"}, {field_key: "text_box", default_value: "https://plus.google.com/" })
-       theme.save_field_value('shipping-grid', ['Free Shipping'])
 
     unless theme.site.nav_menus.where(slug: "eshop_footer_main_menu").present?
       menu = current_site.nav_menus.create(name: "E-shop Footer Menu", slug: "eshop_footer_main_menu")
       menu.append_menu_item({label: "Ecommerce Plugin", type: "external", link: "http://camaleon.tuzitio.com"})
-      menu_item = menu.append_menu_item({label: "Camaleon CMS", type: "external", link: "http://camaleon.tuzitio.com"})
+      menu_item = menu.append_menu_item({label: "ShopLid", type: "external", link: "http://shoplid.com"})
       menu_item.append_menu_item({label: "Test", type: "external", link: "#"})
       menu_item.append_menu_item({label: "Test 2", type: "external", link: "#"})
       menu_item.append_menu_item({label: "Test 3", type: "external", link: "#"})
